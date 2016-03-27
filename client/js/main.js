@@ -1,25 +1,22 @@
-// //Use to instantiate app, connect factory & controllers and configure app.
-
-// var app = angular.module('', []);
-
-// app.config([]);
-
-var app = angular.module('myApp', ['myApp.controllers', 'ngRoute']);
-app.config(['$routeProvider', function($routeProvider) {
-    $routeProvider
-    .when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomePageController'
+//Use to instantiate app, connect factory & controllers and configure app.
+ angular.module('myBlogApp', [ 'ngRoute'])
+.config(['$routeProvider', function($routeProvider) {
+    $routeProvider   
+ .when('/home', {
+    templateUrl: 'views/home.html',
+    controller: "controllers",
+ })
+  
+ .when('/newpost', {
+    templateUrl : 'views/newpost.html',
+})
+    
+ .when('/about', {
+     templateUrl : 'views/about.html',
+    controller: "postController",
+})
+ .otherwise({
+      redirectTo: '/home'
+   
     })
-    .when('/instructors', {
-        templateUrl: 'blogposts.html',
-        controller: 'InstructorPageController'
-    })
-    .when('/instructors/:id', {
-        templateUrl: 'views_instructor_detail.html',
-        controller: 'InstructorDetailController'
-    })
-    .otherwise({
-        redirectTo: '/','home.html'
-    });
 }]);

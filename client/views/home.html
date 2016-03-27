@@ -1,15 +1,64 @@
-<!--<h1></h1><h1>This is the home page!</h1>
-  <h2>{{welcomeMessage}}</h2>
- <h3>{{weather}}</h3> 
- <h3>{{weather}}</h3>
- 
- <a href="#instructors">View our Instructors Page</a>
- 
+
+<div class="navbar">
+    <ul class= "nav-navbar pull-up">
+        <li><a href="#/home"><button>Home</button></a></li>
+        <li><a href="#/newpost"><button>New Post</button></a></li>
+        <li><a href="#/about"><button>About</button></a></li>
+    </ul>
+</div>
+<h1>Welcome to My Blog</h1>
+<div class="container">
+<ul>
+    <li ng-repeat="post in posts">
+    
+    <input type="text" ng-model="post.title">
+    <input type="text" ng-model="post.author">
+    <button ng-click="save()" class="btn btn-primary">SAVE</button>
+    </li>  
+</ul>
+</div>
+
+
+
+        <!--<div class="Main" ng-controller="HomeController">-->
+
+    <!--<div type="form " ng-repeat="blog in blogs" class="post"> 
+        <ul class="post" ng-repeat="post in posts">{{post}}
+            <li>{{title}}</li>
+            <li>{{author}}</li>
+            <li>{{content}}</li>
+        </ul>
+    </div>      -->
+  
+
+
+            
+            
+           <!--<div class="rating" ng-click="plusOne($index)">+ {{ product.likes }} </p> 
+            </div>>  
+        </div>
+      -->
+
+                
+                
+                <!--<input ng-model="blogid">  
+                <div type="form " ng-repeat="blog in blogs" class="post">
+                    {{blog.title}}, {{blog.author}}, {{blog.content}}, {{blog.blogDate|date}},
+                    <div class="rating" ng-click="plusOne($index)">+ {{ product.likes }} </p> 
+                    </div>
+             </div>
+               
+           <a href="#new post">Make a new post</a>
  <input style="width:100%;" type="text" ng-model="weather">
- 
- <button ng-click="pluckFirstLetter()">Remove First Letter</button>
- 
- <p ng-click="welcomeMessage = 'YOLO'">I'm just a paragraph.</p>
- 
- <button ng-click="getGoogle()">Get Google</button
- -->
+  
+ <input ng-model="name">
+ <input ng-model="post">
+ <input ng-model="date">
+ <input ng-model="content">
+ <button ng-click="Post()">Post</button>
+ +<br>
+ <input ng-model="noteid">
+
+        
+        -->
+      

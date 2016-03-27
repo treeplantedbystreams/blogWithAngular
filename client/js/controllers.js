@@ -1,61 +1,53 @@
-// //Logic for page actions here. 
-
-// var controllers = angular.module('', []);
-
-// controllers.controller('', []);
-
-var controllers = angular.module('myApp.controllers', []);
- controllers.controller('HomePageController', ['$scope', function($scope) {
- controllers.controller('HomePageController', ['$scope', '$http', function($scope, $http) {
-      $scope.welcomeMessage = 'Hello World!';
-      $scope.weather = "It's sunny and 85 degrees outside!";
-     
-    $scope.pluckFirstLetter = function() {
-         $scope.weather = $scope.weather.substring(1);
-         logValue($scope.weather);
-     }
-     
-     $scope.getGoogle = function() {
-         $http({
-             url: 'http://depotu.io',
-             method: 'GET'
-         }).then(function(success) {
-             console.log(success);
-         }, function(error) {
-             console.error(error);
-         });
-     }
-     
-     function logValue(val) {
-         console.log(val);
-     }
-  }]);
+angular.module("myBlogApp")
+    .controller("controllers"['$scope',"post", "save", function($scope, post, save){
+        
+        $scope.title = 'title';
+        $scope.author = 'author';
+        $scope.post = ['title','author','content'];
+    
+        $scope.save = function() {
+            console.log('it worked');
+            // http.post('api/posts','posts'),
+    
+    };
+    }]);
+        
+//     .controller("postController"['$scope', "post", function($scope, post) {
+//         $scope.title = 'title';
+//         $scope.author = 'author';
+//         $scope.save = function() {
+//             alert("hello?");
+//         };
+//  }]);
   
-  controllers.controller('InstructorPageController', ['$scope', function($scope) {
-   
-              hobbies: 'Hiking'
-          
- }]);
+
  
- controllers.controller('InstructorDetailController', ['$scope', '$routeParams', function($scope, $routeParams) {
-     var instructorid = $routeParams.id;
-     var instructors = [
-         {
-            name: 'David',
-            email: 'someEmail@depotu.io',
-             hobbies: 'Programming'
-        },
-        {
-           name: 'Tyler',
-           email: 'anotherEmail@depotu.io',
-             hobbies: 'Reading'
-         },
-        {
-             name: 'Hillary',
-             email: 'email@depotu.io',
-             hobbies: 'Hiking'
-         }
-     ];
-     
-     $scope.instructor = instructors[instructorid];
- }]);
+
+// angular.module('myblogApp')
+// .controller('controllers', function ($scope,$http) {
+//     $scope.welcome = "Welcome to the course!"
+//     $scope.posts = [
+//     $http.get('http://localhost:3000/api/posts').success(function(data){
+//         $scope.posts = data;
+//     }]);
+
+
+ // $scope.title = "Home";
+    // $scope.items = ["home","about","posts"];
+    // $scope.posts = []; 
+
+
+// var controllers = angular.module('myBlogApp');
+
+// controllers.controller(blogPostController,['$scope','$location', function($scope,location){
+//     $scope.loaded = function(){
+//         $scope.oldMessages = PostFactory.query().$promise.then(function(data){
+//         $scope.oldMessages = data; 
+//         });
+//     }
+    
+//     $scope.newPost = function(){
+//         $location.path("/newpost")
+//     }
+// }])
+

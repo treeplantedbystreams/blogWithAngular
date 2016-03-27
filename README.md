@@ -6,13 +6,19 @@ As usual, create a new repo on GitHub. Then clone it. Copy the contents of your 
 ```
 npm install
 ```
-This will install the various node modules that the server requires. These can be quite large, and we don't want them polluting our GitHub repository. To tell git to ignore them, we need to create a `gitignore` file. To do so, create a new file in the root of your project folder called `.gitignore` (there is nothing before the dot). In the `gitignore` file, simply add the following line:
+This will install the various node modules that the server requires.
+ These can be quite large, and we don't want them polluting our GitHub repository. 
+ To tell git to ignore them, we need to create a `gitignore` file. 
+ To do so, create a new file in the root of your project folder called `.gitignore`
+  (there is nothing before the dot). In the `gitignore` file, simply add the following line:
 ```
 node_modules
 ```
 
 ## API
-The API for this lab is being provided for you. It is available at http://localhost:3000/api. To start it up, make sure your terminal is opened to the root of your project folder. Then run `nodemon`. This server follows standard REST guidelines. Specifically, you have access to the following endpoints:
+The API for this lab is being provided for you. It is available at http://localhost:3000/api. 
+To start it up, make sure your terminal is opened to the root of your project folder. 
+Then run `nodemon`. This server follows standard REST guidelines. Specifically, you have access to the following endpoints:
 * GET `http://localhost:3000/api/posts` - Get an array of all blog posts
 * POST `http://localhost:3000/api/posts` - Store the blog post. Returns the unique id of the newly stored post (standard behavior for APIs).
 * GET `http://localhost:3000/api/posts/[some_id]` - Get the specific blog post with the given id
@@ -20,11 +26,13 @@ The API for this lab is being provided for you. It is available at http://localh
 
 ### Post Format
 A blog post should have the following properties:
-* `id`: Don't worry about including this when submitting a new blog post. The server creates a unique string value for the id of a blog post when you POST one to the server.
+* `id`: Don't worry about including this when submitting a new blog post. 
+        The server creates a unique string value for the id of a blog post when you POST one to the server.
 * `title`: The title of the blog post
 * `author`: The author of the blog post
 * `content`: The long body of the blog post
-* `createdAt`: Don't worry about including this when submitting a new blog post. The server creates this timestamp when you POST a new blog post.
+* `createdAt`: Don't worry about including this when submitting a new blog post. 
+                The server creates this timestamp when you POST a new blog post.
 
 #### Further Reading
 Angular [docs](https://docs.angularjs.org/api/ng)
