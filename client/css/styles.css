@@ -12,7 +12,6 @@ body {
  font-family:  Helvetica, Arial, sans-serif; 
  
 }
-
 .container{
     position: relative;
     z-index: 3;
@@ -22,17 +21,13 @@ body {
     background-color:#05D4F0;
     width:80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
-
-
 
 .sample-show-hide {
   padding:10px;
   border:3px solid white;
   padding:50px;
 }
-
 .sample-show-hide {
   -webkit-transition:all linear 0.5s;
   transition:all linear 0.9s;
@@ -71,6 +66,13 @@ input{
       color:  #72D2FB!important;
   }
 
+body {
+ color: #211f1e ;
+ background: url(/img/bg.jpg) no-repeat center center fixed; 
+ background-size: cover;
+ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
 ul{
     border-radius: 5px;
 }
@@ -79,7 +81,8 @@ li{
     font-size: 16px;
     list-style: none;
     display:inline;
+    font-size: 18px;
+    list-style: none;
+    display:inline;
     
-
-
-
+}
