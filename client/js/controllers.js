@@ -1,61 +1,67 @@
-// //Logic for page actions here. 
+var app = angular.module("myBlogApp.controllers",[])
+app.controller("listController",['$scope',"$http", function($scope, $http){
+  $scope.posts= [];
+  $scope.new_post = '';
+  $http.get("http://localhost:3000/api/posts/").success(function(data){
+      $scope.posts = data;
+  });  
 
-// var controllers = angular.module('', []);
+}]);
 
-// controllers.controller('', []);
+app.controller("submitPostController",['$scope',"$http","postFactory", function($scope, $http, postFactory){
+    
+    $scope.addPost = function(){
+        console.log($scope.post);
+        postFactory.save($scope.post);
+      
+    };
+       
+}]);
 
-var controllers = angular.module('myApp.controllers', []);
- controllers.controller('HomePageController', ['$scope', function($scope) {
- controllers.controller('HomePageController', ['$scope', '$http', function($scope, $http) {
-      $scope.welcomeMessage = 'Hello World!';
-      $scope.weather = "It's sunny and 85 degrees outside!";
-     
-    $scope.pluckFirstLetter = function() {
-         $scope.weather = $scope.weather.substring(1);
-         logValue($scope.weather);
-     }
-     
-     $scope.getGoogle = function() {
-         $http({
-             url: 'http://depotu.io',
-             method: 'GET'
-         }).then(function(success) {
-             console.log(success);
-         }, function(error) {
-             console.error(error);
-         });
-     }
-     
-     function logValue(val) {
-         console.log(val);
-     }
-  }]);
-  
-  controllers.controller('InstructorPageController', ['$scope', function($scope) {
-   
-              hobbies: 'Hiking'
-          
- }]);
- 
- controllers.controller('InstructorDetailController', ['$scope', '$routeParams', function($scope, $routeParams) {
-     var instructorid = $routeParams.id;
-     var instructors = [
-         {
-            name: 'David',
-            email: 'someEmail@depotu.io',
-             hobbies: 'Programming'
-        },
-        {
-           name: 'Tyler',
-           email: 'anotherEmail@depotu.io',
-             hobbies: 'Reading'
-         },
-        {
-             name: 'Hillary',
-             email: 'email@depotu.io',
-             hobbies: 'Hiking'
-         }
-     ];
-     
-     $scope.instructor = instructors[instructorid];
- }]);
+//   $scope.addPost = function( event ) {
+//       if(event.keycode == 13 ) {
+//           $http.post('http://localhost:3000/api/posts/[id]', {text:$scope.new_post}).success(function(data){
+              
+//           });
+//       }
+//   }
+
+    //     // $scope.post = postService.query(); // This is getting all the blog posts from the server. Do we need to do this on a form for composing a new one?
+//     // $scope.designateID = function(postID){
+//     //     $scope.currentPost = postService.get({post: postID})
+//     //     .then({
+//     //         if (success){
+//     //         console.log('successfully labeled');   
+//     //     } , else (err) {
+//     //         console.log("error");
+//     //     }            
+//     // });
+//     // };
+    
+    // $scope.posts = [];
+    //     fullList.getItems()
+    //     .success(function(serverPosts){
+    //         for(var i = 0; i < serverPosts.length; i++){
+    //             $scope.posts.unshift(serverPosts);
+    //         }
+
+
+ // $scope.title = "Home";
+    // $scope.items = ["home","about","posts"];
+    // $scope.posts = []; 
+
+
+// var controllers = angular.module('myBlogApp');
+
+// controllers.controller(blogPostController,['$scope','$location', function($scope,location){
+//     $scope.loaded = function(){
+//         $scope.oldMessages = PostFactory.query().$promise.then(function(data){
+//         $scope.oldMessages = data; 
+//         });
+//     }
+    
+//     $scope.newPost = function(){
+//         $location.path("/newpost")
+//     }
+// }])
+
