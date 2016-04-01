@@ -9,12 +9,3 @@ angular.module("myBlogApp.services", [])
         return data;    
  }]);
  
-("myBlogApp.services", [])
-.factory("postFactory", ['$resource', function($resource) {
-    var data = $resource("http://localhost:3000/api/posts/", {
-        update: {
-            method: 'GET',     
-    },
-       }); 
-        return data;    
- }]);

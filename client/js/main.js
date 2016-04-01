@@ -1,6 +1,4 @@
  angular.module('myBlogApp', ["ngRoute","ngResource","myBlogApp.controllers","myBlogApp.services"])
-//Use to instantiate app, connect factory & controllers and configure app.
- angular.module('myBlogApp', [ 'ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider   
  .when('/home', {
