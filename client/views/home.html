@@ -1,25 +1,31 @@
 
 <!-- First Container -->
+<div class="ok"></div>
+<div class="pic" img src=""></div>
 <br>
-<div class="container"><h1><i>ChEeR.uP.BLog</i></h1>
-
+<div class="container"><h1><i>cheer.up.blog</i></h1>
 <h3>So glad you can join us. This is an open forum for anyone looking to share good thoughts</h3>
  </div>
  <br>
+ <div ng-repeat="post in posts">
  <div class="container">
-  <div class="post" ng-repeat="post in posts">
-        <h3 >"{{post.title}}"</h3>
-        <h5 >by {{post.author}}</h5>
-       <div ng-init="checked=true">
+     <div ng-init="checked=true">
+        <div class="post" >
+            <h3 >"{{post.title}}"</h3>
+            <h5 >by {{post.author}}</h5>  
+            <h3>{{post.date}}</h3>     
             <label>
                 <input type="checkbox" ng-model="checked" style="float:left; margin-right:10px;"> <h6>read on..</h6>
             </label>
             <div class="check-element sample-show-hide" ng-show="checked" style="clear:both;">
                 <h3>{{post.content}}</h3>
+                  
                 
                 <!--<a href="#post/{{$index}}">reply</a>
                 <input type="text"ng-model="new_post" ng-keyUp="add($event)">-->
             </div>
         </div>
-    </div>
+      </div>
   </div>
+  <br>
+ </div>

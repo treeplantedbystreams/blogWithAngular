@@ -6,12 +6,13 @@ body {
  text-decoration: none;  
  font: 20px Montserrat, sans-serif;
  line-height: 1.8;
- background-color:#ffffff;
+ background-image: url(11430194_1651488335072653_1282093505_n.png);
  height: 100%;
  background-size: cover;
  font-family:  Helvetica, Arial, sans-serif; 
- 
 }
+
+
 .container{
     position: relative;
     z-index: 3;
@@ -20,7 +21,12 @@ body {
     border-radius: 6px;
     background-color:#05D4F0;
     width:80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+}
+
+input{
+    color:black;
 }
 
 .sample-show-hide {
@@ -37,38 +43,25 @@ body {
   opacity:5;
 }
 
-input{
-    color:black;
-}
 
-.navContainer {
-    animation: mymove 5s infinite;
-    color: #A73F59;
-    position: relative;
-    z-index: 3;
-    border-bottom-right-radius: 6px;
-    border-top-right-radius: 6px;
-    
-}
 
 .navbar {
-        padding-left:30px;
+      position: relative;
+      padding-left:30px;
       padding-right:30px;
       padding-top: 15px;
       padding-bottom: 15px;
-      border: 0;
+      border: 2px transparent;
       border-radius: 0;
       margin-bottom: 0;
       font-size: 14px;
       letter-spacing: 5px;
   }
-  .navbar-nav  li a:hover {
-      color:  #72D2FB!important;
-  }
-
+  
 
 ul{
     border-radius: 5px;
+
 }
 
 li{
@@ -78,5 +71,14 @@ li{
     font-size: 18px;
     list-style: none;
     display:inline;
-    
+    margin-right: 30px;
+    border: 2px solid transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+
+}
+  li:hover {
+      border-color: #A73F59;
+      color:#A73F59;
 }
